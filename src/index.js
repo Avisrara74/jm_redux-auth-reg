@@ -1,14 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
+import App from './components/App';
+import reducers from './redux/reducers';
+
+/* eslint-disable no-underscore-dangle */
+const ext = window.__REDUX_DEVTOOLS_EXTENSION__;
+const devtoolMiddleware = ext && ext();
+/* eslint-enable */
+
+const store = createStore(
+  reducers,
+  compose(
+    applyMiddleware(thunk),
+    devtoolMiddleware,
+  ),
+);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <BrowserRouter>
+      <App dispatch={store.dispatch} />
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

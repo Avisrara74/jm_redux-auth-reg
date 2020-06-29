@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/jm_redux-auth-reg/static/css/main.61eec482.chunk.css",
+    "main.js": "/jm_redux-auth-reg/static/js/main.54ab57fb.chunk.js",
+    "main.js.map": "/jm_redux-auth-reg/static/js/main.54ab57fb.chunk.js.map",
+    "runtime-main.js": "/jm_redux-auth-reg/static/js/runtime-main.ae55e092.js",
+    "runtime-main.js.map": "/jm_redux-auth-reg/static/js/runtime-main.ae55e092.js.map",
+    "static/css/2.3cb76441.chunk.css": "/jm_redux-auth-reg/static/css/2.3cb76441.chunk.css",
+    "static/js/2.4fbd276b.chunk.js": "/jm_redux-auth-reg/static/js/2.4fbd276b.chunk.js",
+    "static/js/2.4fbd276b.chunk.js.map": "/jm_redux-auth-reg/static/js/2.4fbd276b.chunk.js.map",
+    "index.html": "/jm_redux-auth-reg/index.html",
+    "precache-manifest.98fac2c262f49a3a2c58854eadeca48d.js": "/jm_redux-auth-reg/precache-manifest.98fac2c262f49a3a2c58854eadeca48d.js",
+    "service-worker.js": "/jm_redux-auth-reg/service-worker.js",
+    "static/css/2.3cb76441.chunk.css.map": "/jm_redux-auth-reg/static/css/2.3cb76441.chunk.css.map",
+    "static/css/main.61eec482.chunk.css.map": "/jm_redux-auth-reg/static/css/main.61eec482.chunk.css.map",
+    "static/js/2.4fbd276b.chunk.js.LICENSE.txt": "/jm_redux-auth-reg/static/js/2.4fbd276b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ae55e092.js",
+    "static/css/2.3cb76441.chunk.css",
+    "static/js/2.4fbd276b.chunk.js",
+    "static/css/main.61eec482.chunk.css",
+    "static/js/main.54ab57fb.chunk.js"
+  ]
+}

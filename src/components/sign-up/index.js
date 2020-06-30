@@ -1,17 +1,18 @@
 import React from 'react';
 import { uniqueId } from 'lodash';
 import { connect } from 'react-redux';
+import { Redirect, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { Button, Input } from 'antd';
 import propTypes from 'prop-types';
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom';
+
 import 'antd/dist/antd.css';
 import * as actions from '../../redux/actions';
 import '../style.css';
 
 const formikInicialValues = {
-  login: '',
+  username: '',
   email: '',
   password: '',
   repeatPassword: '',
@@ -19,7 +20,7 @@ const formikInicialValues = {
 
 const formItems = [
   {
-    id: uniqueId(), title: 'Логин:', name: 'login', placeholder: 'Введите логин',
+    id: uniqueId(), title: 'Логин:', name: 'username', placeholder: 'Введите логин',
   },
   {
     id: uniqueId(), title: 'Почта:', name: 'email', placeholder: 'Введите почту',
@@ -33,7 +34,7 @@ const formItems = [
 ];
 
 const formikValidationSchema = Yup.object({
-  login: Yup.string()
+  username: Yup.string()
     .max(30, 'Слишком длинный ник!')
     .required('Заполните поле'),
   email: Yup.string()
@@ -54,8 +55,9 @@ const formikValidationSchema = Yup.object({
 const mapStateToProps = (state) => {
   const { signUpState } = state;
   const isInputsDisable = (signUpState === 'requested');
+  const isSignUpRequestSuccess = (signUpState === 'finished');
 
-  const props = { isInputsDisable, signUpState };
+  const props = { isInputsDisable, isSignUpRequestSuccess };
   return props;
 };
 
@@ -64,29 +66,31 @@ const actionCreators = {
 };
 
 const SignUp = (props) => {
-  const formik = useFormik({
-    initialValues: formikInicialValues,
-    validationSchema: formikValidationSchema,
-    onSubmit: () => {
-      // eslint-disable-next-line no-use-before-define
-      handleOnSignUp();
-    },
-  });
-  const handleOnSignUp = async () => {
-    const { signUp } = props;
-    const { login, email, password } = formik.values;
+  const { signUp, isSignUpRequestSuccess, isInputsDisable } = props;
+
+  const handleOnSignUp = async (formik) => {
+    const { username, email, password } = formik.values;
     const newUser = {
       user: {
-        username: login,
+        username,
         email,
         password,
       },
     };
-    signUp(newUser);
-    formik.resetForm();
+    signUp(newUser, formik);
   };
 
-  const { isInputsDisable } = props;
+  const SignInRedirect = () => (
+    (isSignUpRequestSuccess) ? (<Redirect to="sign-in" />) : null
+  );
+
+  const formik = useFormik({
+    initialValues: formikInicialValues,
+    validationSchema: formikValidationSchema,
+    onSubmit: () => {
+      handleOnSignUp(formik);
+    },
+  });
 
   const renderInputs = () => (
     formItems.map((formItem) => (
@@ -123,6 +127,7 @@ const SignUp = (props) => {
           Зарегистрироваться
         </Button>
         <Link to="/sign-in" className="form-link">Страница авторизации</Link>
+        {SignInRedirect()}
       </div>
     </form>
   );
@@ -131,11 +136,13 @@ const SignUp = (props) => {
 SignUp.propTypes = {
   signUp: propTypes.func,
   isInputsDisable: propTypes.bool,
+  isSignUpRequestSuccess: propTypes.bool,
 };
 
 SignUp.defaultProps = {
   signUp: null,
   isInputsDisable: false,
+  isSignUpRequestSuccess: false,
 };
 
 export default connect(mapStateToProps, actionCreators)(SignUp);

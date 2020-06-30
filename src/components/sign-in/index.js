@@ -28,8 +28,7 @@ const actionCreators = {
 const SignIn = (props) => {
   const { isInputsDisable, signIn } = props;
 
-  const handleOnAuthorizationUser = () => {
-    // eslint-disable-next-line no-use-before-define
+  const handleOnAuthorizationUser = (formik) => {
     const { email, password } = formik.values;
     const userData = {
       user: {
@@ -37,13 +36,13 @@ const SignIn = (props) => {
         password,
       },
     };
-    signIn(userData);
+    signIn(userData, formik);
   };
 
   const formik = useFormik({
     initialValues: formikInitialValues,
     onSubmit: () => {
-      handleOnAuthorizationUser();
+      handleOnAuthorizationUser(formik);
     },
   });
 
@@ -60,6 +59,9 @@ const SignIn = (props) => {
           value={formik.values.email}
           disabled={isInputsDisable}
         />
+        {formik.touched.email && formik.errors.email ? (
+          <div className="form-item-error">{formik.errors.email}</div>
+        ) : null}
       </label>
 
       <label htmlFor="password" className="form-item">
@@ -73,6 +75,9 @@ const SignIn = (props) => {
           iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
           disabled={isInputsDisable}
         />
+        {formik.touched.password && formik.errors.password ? (
+          <div className="form-item-error">{formik.errors.password}</div>
+        ) : null}
       </label>
 
       <div className="form-item">
@@ -81,6 +86,7 @@ const SignIn = (props) => {
           htmlType="submit"
           className="form-submit"
           onClick={formik.handleSubmit}
+          disabled={isInputsDisable}
         >
           Войти
         </Button>

@@ -9,16 +9,10 @@ import * as serviceWorker from './serviceWorker';
 import App from './components/App';
 import reducers from './redux/reducers';
 
-/* eslint-disable no-underscore-dangle */
-const ext = window.__REDUX_DEVTOOLS_EXTENSION__;
-const devtoolMiddleware = ext && ext();
-/* eslint-enable */
-
 const store = createStore(
   reducers,
   compose(
     applyMiddleware(thunk),
-    devtoolMiddleware,
   ),
 );
 

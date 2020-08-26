@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/jm_redux-auth-reg/static/css/main.61eec482.chunk.css",
-    "main.js": "/jm_redux-auth-reg/static/js/main.ab1b9af8.chunk.js",
-    "main.js.map": "/jm_redux-auth-reg/static/js/main.ab1b9af8.chunk.js.map",
-    "runtime-main.js": "/jm_redux-auth-reg/static/js/runtime-main.ae55e092.js",
-    "runtime-main.js.map": "/jm_redux-auth-reg/static/js/runtime-main.ae55e092.js.map",
-    "static/css/2.3cb76441.chunk.css": "/jm_redux-auth-reg/static/css/2.3cb76441.chunk.css",
-    "static/js/2.5a055ab3.chunk.js": "/jm_redux-auth-reg/static/js/2.5a055ab3.chunk.js",
-    "static/js/2.5a055ab3.chunk.js.map": "/jm_redux-auth-reg/static/js/2.5a055ab3.chunk.js.map",
-    "index.html": "/jm_redux-auth-reg/index.html",
-    "precache-manifest.54d9b3909c7ada3daa2a63b6b6bea0e1.js": "/jm_redux-auth-reg/precache-manifest.54d9b3909c7ada3daa2a63b6b6bea0e1.js",
-    "service-worker.js": "/jm_redux-auth-reg/service-worker.js",
-    "static/css/2.3cb76441.chunk.css.map": "/jm_redux-auth-reg/static/css/2.3cb76441.chunk.css.map",
-    "static/css/main.61eec482.chunk.css.map": "/jm_redux-auth-reg/static/css/main.61eec482.chunk.css.map",
-    "static/js/2.5a055ab3.chunk.js.LICENSE.txt": "/jm_redux-auth-reg/static/js/2.5a055ab3.chunk.js.LICENSE.txt"
+    "main.css": "/redux-auth-reg/static/css/main.61eec482.chunk.css",
+    "main.js": "/redux-auth-reg/static/js/main.d4a78cd3.chunk.js",
+    "main.js.map": "/redux-auth-reg/static/js/main.d4a78cd3.chunk.js.map",
+    "runtime-main.js": "/redux-auth-reg/static/js/runtime-main.873522d6.js",
+    "runtime-main.js.map": "/redux-auth-reg/static/js/runtime-main.873522d6.js.map",
+    "static/css/2.3cb76441.chunk.css": "/redux-auth-reg/static/css/2.3cb76441.chunk.css",
+    "static/js/2.5a055ab3.chunk.js": "/redux-auth-reg/static/js/2.5a055ab3.chunk.js",
+    "static/js/2.5a055ab3.chunk.js.map": "/redux-auth-reg/static/js/2.5a055ab3.chunk.js.map",
+    "index.html": "/redux-auth-reg/index.html",
+    "precache-manifest.c57783ca98ca0be9e5157b64c67a2bb6.js": "/redux-auth-reg/precache-manifest.c57783ca98ca0be9e5157b64c67a2bb6.js",
+    "service-worker.js": "/redux-auth-reg/service-worker.js",
+    "static/css/2.3cb76441.chunk.css.map": "/redux-auth-reg/static/css/2.3cb76441.chunk.css.map",
+    "static/css/main.61eec482.chunk.css.map": "/redux-auth-reg/static/css/main.61eec482.chunk.css.map",
+    "static/js/2.5a055ab3.chunk.js.LICENSE.txt": "/redux-auth-reg/static/js/2.5a055ab3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ae55e092.js",
+    "static/js/runtime-main.873522d6.js",
     "static/css/2.3cb76441.chunk.css",
     "static/js/2.5a055ab3.chunk.js",
     "static/css/main.61eec482.chunk.css",
-    "static/js/main.ab1b9af8.chunk.js"
+    "static/js/main.d4a78cd3.chunk.js"
   ]
 }
